@@ -1,0 +1,482 @@
+openapi: 3.1.0
+info:
+  title: Meniu API
+  version: 1.0.0
+  description: API meniu, patiekalams ir komentarams valdyti
+paths:
+  /api/menius:
+    get:
+      summary: Gràþina visus menius
+      tags:
+        - Menius
+      responses:
+        '200':
+          description: Meniu sàraðas
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/MeniuDto'
+    post:
+      summary: Sukuria naujà meniu
+      tags:
+        - Menius
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateMeniuDto'
+      responses:
+        '201':
+          description: Meniu sukurtas
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MeniuDto'
+
+  /api/menius/{meniuId}:
+    get:
+      summary: Gràþina vienà meniu pagal ID
+      tags:
+        - Menius
+      parameters:
+        - in: path
+          name: meniuId
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Vienas meniu
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MeniuDto'
+        '404':
+          description: Meniu nerasta
+    put:
+      summary: Atnaujina meniu
+      tags:
+        - Menius
+      parameters:
+        - in: path
+          name: meniuId
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateMeniuDto'
+      responses:
+        '200':
+          description: Meniu atnaujintas
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MeniuDto'
+        '404':
+          description: Meniu nerasta
+    delete:
+      summary: Iðtrina meniu pagal ID
+      tags:
+        - Menius
+      parameters:
+        - in: path
+          name: meniuId
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Meniu iðtrintas
+        '404':
+          description: Meniu nerasta
+
+  /api/menius/{meniuId}/dishes:
+    get:
+      summary: Gràþina visus patiekalus konkreèiame meniu
+      tags:
+        - Dishes
+      parameters:
+        - in: path
+          name: meniuId
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Patiekalo sàraðas
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DishDto'
+    post:
+      summary: Sukuria naujà patiekalà meniu
+      tags:
+        - Dishes
+      parameters:
+        - in: path
+          name: meniuId
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateDishDto'
+      responses:
+        '201':
+          description: Patiekalas sukurtas
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DishDto'
+
+  /api/menius/{meniuId}/dishes/{dishId}:
+    get:
+      summary: Gràþina vienà patiekalà pagal ID
+      tags:
+        - Dishes
+      parameters:
+        - in: path
+          name: meniuId
+          required: true
+          schema:
+            type: integer
+        - in: path
+          name: dishId
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Patiekalas
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DishDto'
+        '404':
+          description: Patiekalas nerastas
+    put:
+      summary: Atnaujina patiekalà
+      tags:
+        - Dishes
+      parameters:
+        - in: path
+          name: meniuId
+          required: true
+          schema:
+            type: integer
+        - in: path
+          name: dishId
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateDishDto'
+      responses:
+        '200':
+          description: Patiekalas atnaujintas
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DishDto'
+        '404':
+          description: Patiekalas nerastas
+    delete:
+      summary: Iðtrina patiekalà
+      tags:
+        - Dishes
+      parameters:
+        - in: path
+          name: meniuId
+          required: true
+          schema:
+            type: integer
+        - in: path
+          name: dishId
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Patiekalas iðtrintas
+        '404':
+          description: Patiekalas nerastas
+
+  /api/menius/{meniuId}/dishes/{dishId}/comments:
+    get:
+      summary: Gràþina visus komentarus konkreèiam patiekalui
+      tags:
+        - Comments
+      parameters:
+        - in: path
+          name: meniuId
+          required: true
+          schema:
+            type: integer
+        - in: path
+          name: dishId
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Komentarø sàraðas
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CommentDto'
+    post:
+      summary: Sukuria komentarà patiekalui
+      tags:
+        - Comments
+      parameters:
+        - in: path
+          name: meniuId
+          required: true
+          schema:
+            type: integer
+        - in: path
+          name: dishId
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateCommentDto'
+      responses:
+        '201':
+          description: Komentaras sukurtas
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommentDto'
+
+  /api/menius/{meniuId}/dishes/{dishId}/comments/{commentId}:
+    get:
+      summary: Gràþina vienà komentarà
+      tags:
+        - Comments
+      parameters:
+        - in: path
+          name: meniuId
+          required: true
+          schema:
+            type: integer
+        - in: path
+          name: dishId
+          required: true
+          schema:
+            type: integer
+        - in: path
+          name: commentId
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Komentaras
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommentDto'
+        '404':
+          description: Komentaras nerastas
+    put:
+      summary: Atnaujina komentarà
+      tags:
+        - Comments
+      parameters:
+        - in: path
+          name: meniuId
+          required: true
+          schema:
+            type: integer
+        - in: path
+          name: dishId
+          required: true
+          schema:
+            type: integer
+        - in: path
+          name: commentId
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateCommentDto'
+      responses:
+        '200':
+          description: Komentaras atnaujintas
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommentDto'
+        '404':
+          description: Komentaras nerastas
+    delete:
+      summary: Iðtrina komentarà
+      tags:
+        - Comments
+      parameters:
+        - in: path
+          name: meniuId
+          required: true
+          schema:
+            type: integer
+        - in: path
+          name: dishId
+          required: true
+          schema:
+            type: integer
+        - in: path
+          name: commentId
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Komentaras iðtrintas
+        '404':
+          description: Komentaras nerastas
+
+components:
+  schemas:
+    MeniuDto:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: "Pagrindinis meniu"
+        description:
+          type: string
+          example: "Apraðymas apie meniu"
+    CreateMeniuDto:
+      type: object
+      required:
+        - name
+        - description
+      properties:
+        name:
+          type: string
+          example: "Naujas meniu"
+        description:
+          type: string
+          example: "Detalus meniu apraðymas"
+    UpdateMeniuDto:
+      type: object
+      required:
+        - description
+      properties:
+        description:
+          type: string
+          example: "Atnaujintas apraðymas"
+    DishDto:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        description:
+          type: string
+        price:
+          type: number
+          format: float
+        ingredients:
+          type: string
+        isAvailable:
+          type: boolean
+    CreateDishDto:
+      type: object
+      required:
+        - name
+        - description
+        - price
+        - ingredients
+        - isAvailable
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        price:
+          type: number
+          format: float
+        ingredients:
+          type: string
+        isAvailable:
+          type: boolean
+    UpdateDishDto:
+      type: object
+      required:
+        - description
+        - price
+        - ingredients
+        - isAvailable
+      properties:
+        description:
+          type: string
+        price:
+          type: number
+          format: float
+        ingredients:
+          type: string
+        isAvailable:
+          type: boolean
+    CommentDto:
+      type: object
+      properties:
+        id:
+          type: integer
+        content:
+          type: string
+        rating:
+          type: integer
+        dishId:
+          type: integer
+    CreateCommentDto:
+      type: object
+      required:
+        - content
+        - rating
+      properties:
+        content:
+          type: string
+        rating:
+          type: integer
+    UpdateCommentDto:
+      type: object
+      required:
+        - content
+        - rating
+      properties:
+        content:
+          type: string
+        rating:
+          type: integer

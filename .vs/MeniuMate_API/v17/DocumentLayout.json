@@ -1,0 +1,207 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Vartotojas\\Desktop\\MeniuMate\\MeniuMate_API\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5C682B8A-84BA-4930-B745-ED0B3F484AD8}|MeniuMate_API.csproj|c:\\users\\vartotojas\\desktop\\meniumate\\meniumate_api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C682B8A-84BA-4930-B745-ED0B3F484AD8}|MeniuMate_API.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C682B8A-84BA-4930-B745-ED0B3F484AD8}|MeniuMate_API.csproj|c:\\users\\vartotojas\\desktop\\meniumate\\meniumate_api\\data\\entities\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C682B8A-84BA-4930-B745-ED0B3F484AD8}|MeniuMate_API.csproj|solutionrelative:data\\entities\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C682B8A-84BA-4930-B745-ED0B3F484AD8}|MeniuMate_API.csproj|c:\\users\\vartotojas\\desktop\\meniumate\\meniumate_api\\data\\entities\\dish.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C682B8A-84BA-4930-B745-ED0B3F484AD8}|MeniuMate_API.csproj|solutionrelative:data\\entities\\dish.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C682B8A-84BA-4930-B745-ED0B3F484AD8}|MeniuMate_API.csproj|c:\\users\\vartotojas\\desktop\\meniumate\\meniumate_api\\data\\entities\\meniu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C682B8A-84BA-4930-B745-ED0B3F484AD8}|MeniuMate_API.csproj|solutionrelative:data\\entities\\meniu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C682B8A-84BA-4930-B745-ED0B3F484AD8}|MeniuMate_API.csproj|c:\\users\\vartotojas\\desktop\\meniumate\\meniumate_api\\data\\forumdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C682B8A-84BA-4930-B745-ED0B3F484AD8}|MeniuMate_API.csproj|solutionrelative:data\\forumdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C682B8A-84BA-4930-B745-ED0B3F484AD8}|MeniuMate_API.csproj|c:\\users\\vartotojas\\desktop\\meniumate\\meniumate_api\\openapi.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{5C682B8A-84BA-4930-B745-ED0B3F484AD8}|MeniuMate_API.csproj|solutionrelative:openapi.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C682B8A-84BA-4930-B745-ED0B3F484AD8}|MeniuMate_API.csproj|c:\\users\\vartotojas\\desktop\\meniumate\\meniumate_api\\data\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{5C682B8A-84BA-4930-B745-ED0B3F484AD8}|MeniuMate_API.csproj|solutionrelative:data\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C682B8A-84BA-4930-B745-ED0B3F484AD8}|MeniuMate_API.csproj|c:\\users\\vartotojas\\desktop\\meniumate\\meniumate_api\\migrations\\forumdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C682B8A-84BA-4930-B745-ED0B3F484AD8}|MeniuMate_API.csproj|solutionrelative:migrations\\forumdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C682B8A-84BA-4930-B745-ED0B3F484AD8}|MeniuMate_API.csproj|c:\\users\\vartotojas\\desktop\\meniumate\\meniumate_api\\migrations\\20250914121412_initial db schema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C682B8A-84BA-4930-B745-ED0B3F484AD8}|MeniuMate_API.csproj|solutionrelative:migrations\\20250914121412_initial db schema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C682B8A-84BA-4930-B745-ED0B3F484AD8}|MeniuMate_API.csproj|c:\\users\\vartotojas\\desktop\\meniumate\\meniumate_api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{5C682B8A-84BA-4930-B745-ED0B3F484AD8}|MeniuMate_API.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C682B8A-84BA-4930-B745-ED0B3F484AD8}|MeniuMate_API.csproj|c:\\users\\vartotojas\\desktop\\meniumate\\meniumate_api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{5C682B8A-84BA-4930-B745-ED0B3F484AD8}|MeniuMate_API.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 9,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "OpenApi.yml",
+              "DocumentMoniker": "C:\\Users\\Vartotojas\\Desktop\\MeniuMate\\MeniuMate_API\\OpenApi.yml",
+              "RelativeDocumentMoniker": "OpenApi.yml",
+              "ToolTip": "C:\\Users\\Vartotojas\\Desktop\\MeniuMate\\MeniuMate_API\\OpenApi.yml",
+              "RelativeToolTip": "OpenApi.yml",
+              "ViewState": "AgIAANkBAAAAAAAAAAAmwOEBAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2025-09-14T20:42:24.457Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ForumDbContextModelSnapshot.cs",
+              "DocumentMoniker": "C:\\Users\\Vartotojas\\Desktop\\MeniuMate\\MeniuMate_API\\Migrations\\ForumDbContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "Migrations\\ForumDbContextModelSnapshot.cs",
+              "ToolTip": "C:\\Users\\Vartotojas\\Desktop\\MeniuMate\\MeniuMate_API\\Migrations\\ForumDbContextModelSnapshot.cs",
+              "RelativeToolTip": "Migrations\\ForumDbContextModelSnapshot.cs",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAYwIwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-14T19:42:13.609Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "20250914121412_initial db schema.cs",
+              "DocumentMoniker": "C:\\Users\\Vartotojas\\Desktop\\MeniuMate\\MeniuMate_API\\Migrations\\20250914121412_initial db schema.cs",
+              "RelativeDocumentMoniker": "Migrations\\20250914121412_initial db schema.cs",
+              "ToolTip": "C:\\Users\\Vartotojas\\Desktop\\MeniuMate\\MeniuMate_API\\Migrations\\20250914121412_initial db schema.cs",
+              "RelativeToolTip": "Migrations\\20250914121412_initial db schema.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAAwGUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-14T13:57:33.174Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Vartotojas\\Desktop\\MeniuMate\\MeniuMate_API\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\Vartotojas\\Desktop\\MeniuMate\\MeniuMate_API\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-10T18:20:32.702Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ForumDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Vartotojas\\Desktop\\MeniuMate\\MeniuMate_API\\Data\\ForumDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\ForumDbContext.cs",
+              "ToolTip": "C:\\Users\\Vartotojas\\Desktop\\MeniuMate\\MeniuMate_API\\Data\\ForumDbContext.cs",
+              "RelativeToolTip": "Data\\ForumDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-10T18:19:11.342Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Comment.cs",
+              "DocumentMoniker": "C:\\Users\\Vartotojas\\Desktop\\MeniuMate\\MeniuMate_API\\Data\\Entities\\Comment.cs",
+              "RelativeDocumentMoniker": "Data\\Entities\\Comment.cs",
+              "ToolTip": "C:\\Users\\Vartotojas\\Desktop\\MeniuMate\\MeniuMate_API\\Data\\Entities\\Comment.cs",
+              "RelativeToolTip": "Data\\Entities\\Comment.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-10T18:12:37.043Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Dish.cs",
+              "DocumentMoniker": "C:\\Users\\Vartotojas\\Desktop\\MeniuMate\\MeniuMate_API\\Data\\Entities\\Dish.cs",
+              "RelativeDocumentMoniker": "Data\\Entities\\Dish.cs",
+              "ToolTip": "C:\\Users\\Vartotojas\\Desktop\\MeniuMate\\MeniuMate_API\\Data\\Entities\\Dish.cs",
+              "RelativeToolTip": "Data\\Entities\\Dish.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-10T18:11:30.314Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Meniu.cs",
+              "DocumentMoniker": "C:\\Users\\Vartotojas\\Desktop\\MeniuMate\\MeniuMate_API\\Data\\Entities\\Meniu.cs",
+              "RelativeDocumentMoniker": "Data\\Entities\\Meniu.cs",
+              "ToolTip": "C:\\Users\\Vartotojas\\Desktop\\MeniuMate\\MeniuMate_API\\Data\\Entities\\Meniu.cs",
+              "RelativeToolTip": "Data\\Entities\\Meniu.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-10T18:09:50.411Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "docker-compose.yml",
+              "DocumentMoniker": "C:\\Users\\Vartotojas\\Desktop\\MeniuMate\\MeniuMate_API\\Data\\docker-compose.yml",
+              "RelativeDocumentMoniker": "Data\\docker-compose.yml",
+              "ToolTip": "C:\\Users\\Vartotojas\\Desktop\\MeniuMate\\MeniuMate_API\\Data\\docker-compose.yml",
+              "RelativeToolTip": "Data\\docker-compose.yml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2025-09-10T17:22:26.513Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Vartotojas\\Desktop\\MeniuMate\\MeniuMate_API\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Vartotojas\\Desktop\\MeniuMate\\MeniuMate_API\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEBAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-10T16:32:26.194Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\Vartotojas\\Desktop\\MeniuMate\\MeniuMate_API\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\Vartotojas\\Desktop\\MeniuMate\\MeniuMate_API\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-11T19:54:57.413Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

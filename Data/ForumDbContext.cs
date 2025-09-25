@@ -1,9 +1,11 @@
-﻿using MeniuMate_API.Data.Entities;
+﻿using MeniuMate_API.Auth.Model;
+using MeniuMate_API.Data.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace MeniuMate_API.Data
 {
-    public class ForumDbContext : DbContext
+    public class ForumDbContext : IdentityDbContext<ForumRestUser>
     {
         private readonly IConfiguration _configuration;
         public DbSet<Meniu> Menius { get; set; }

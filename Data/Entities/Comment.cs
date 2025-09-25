@@ -1,4 +1,7 @@
-﻿namespace MeniuMate_API.Data.Entities
+﻿using MeniuMate_API.Auth.Model;
+using System.ComponentModel.DataAnnotations;
+
+namespace MeniuMate_API.Data.Entities
 {
     public class Comment
     {
@@ -8,6 +11,11 @@
         public required DateTime CreationDate { get; set; }
 
         public required Dish Dish { get; set; }
+
+        [Required]
+        public required string UserId { get; set; }
+        public ForumRestUser User { get; set; }
+
     }
     public record CommentDto(int Id, string Content, int Rating, int DishId);
     public record CreateCommentDto(string Content, int Rating);

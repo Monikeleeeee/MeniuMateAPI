@@ -1,4 +1,7 @@
-﻿namespace MeniuMate_API.Data.Entities
+﻿using MeniuMate_API.Auth.Model;
+using System.ComponentModel.DataAnnotations;
+
+namespace MeniuMate_API.Data.Entities
 {
     public class Dish
     {
@@ -11,6 +14,11 @@
         public bool IsAvailable { get; set; }
 
         public required Meniu Meniu { get; set; }
+
+        [Required]
+        public required string UserId { get; set; }
+        public ForumRestUser User { get; set; }
+
     }
     public record DishDto(int Id, string Name, string Description, double Price, string Ingredients, bool IsAvailable);
     public record CreateDishDto(string Name, string Description, double Price, string Ingredients, bool IsAvailable);

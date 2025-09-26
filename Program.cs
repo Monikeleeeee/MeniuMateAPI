@@ -50,9 +50,13 @@ app.AddAuthApi();
 app.UseAuthentication();
 app.UseAuthorization();
 
-using var scope = app.Services.CreateScope();
-var dbSeeder = scope.ServiceProvider.GetRequiredService<AuthDbSeeder>();
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<ForumDbContext>();
+    db.Database.Migrate();
 
-await dbSeeder.SeedAsync();
+    var dbSeeder = scope.ServiceProvider.GetRequiredService<AuthDbSeeder>();
+    await dbSeeder.SeedAsync();
+}
 
 app.Run();

@@ -56,7 +56,7 @@ using (var scope = app.Services.CreateScope())
     db.Database.Migrate();
 
     var dbSeeder = scope.ServiceProvider.GetRequiredService<AuthDbSeeder>();
-    await dbSeeder.SeedAsync();
+    //await dbSeeder.SeedAsync();
 }
 
 app.Run();

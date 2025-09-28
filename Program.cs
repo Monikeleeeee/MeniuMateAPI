@@ -53,6 +53,6 @@ app.UseAuthorization();
 using var scope = app.Services.CreateScope();
 var dbSeeder = scope.ServiceProvider.GetRequiredService<AuthDbSeeder>();
 
-await dbSeeder.SeedAsync();
+//await dbSeeder.SeedAsync();
 
 app.Run();

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MeniuMate_API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c678266ccfc78ed8688fa983d16aba9d800f5115")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+81a5796a41dc34f15f93d8573f9d54abd63fb487")]
 [assembly: System.Reflection.AssemblyProductAttribute("MeniuMate_API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MeniuMate_API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

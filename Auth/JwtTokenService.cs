@@ -52,7 +52,7 @@ namespace MeniuMate_API.Auth
             (
                 issuer: _issuer,
                 audience: _audience,
-                expires: DateTime.UtcNow.AddMinutes(24),
+                expires: DateTime.UtcNow.AddHours(24),
                 claims: authClaims,
                 signingCredentials: new SigningCredentials(_authSigningKey, SecurityAlgorithms.HmacSha256)
             );

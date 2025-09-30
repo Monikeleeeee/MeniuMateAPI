@@ -51,8 +51,11 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 using var scope = app.Services.CreateScope();
-var dbSeeder = scope.ServiceProvider.GetRequiredService<AuthDbSeeder>();
 
-//await dbSeeder.SeedAsync();
+var dbContext = scope.ServiceProvider.GetRequiredService<ForumDbContext>();
+dbContext.Database.Migrate();
+
+var dbSeeder = scope.ServiceProvider.GetRequiredService<AuthDbSeeder>();
+await dbSeeder.SeedAsync();
 
 app.Run();

@@ -13,6 +13,9 @@ bin/
 obj/
 Debug/
 Release/
+*.dll
+*.exe
+*.pdb
 
 # Node/React
 node_modules/

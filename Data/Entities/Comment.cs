@@ -17,7 +17,7 @@ namespace MeniuMate_API.Data.Entities
         public ForumRestUser User { get; set; }
 
     }
-    public record CommentDto(int Id, string Content, int Rating, int DishId);
+    public record CommentDto(int Id, string Content, int Rating, int DishId, string UserId);
     public record CreateCommentDto(string Content, int Rating);
     public record UpdateCommentDto(string Content, int Rating);
 }

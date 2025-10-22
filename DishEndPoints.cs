@@ -28,7 +28,7 @@ namespace MeniuMate_API
                     .ToListAsync(cancellationToken);
 
                 return Results.Ok(dishes.Select(d => new DishDto(
-                    d.Id, d.Name, d.Description, d.Price, d.Ingredients, d.IsAvailable
+                    d.Id, d.Name, d.Description, d.Price, d.Ingredients, d.IsAvailable, d.ImageUrl
                 )));
             });
 
@@ -42,7 +42,9 @@ namespace MeniuMate_API
                 if (dish == null)
                     return Results.NotFound("Dish not found in this meniu");
 
-                return Results.Ok(new DishDto(dish.Id, dish.Name, dish.Description, dish.Price, dish.Ingredients, dish.IsAvailable));
+                Console.WriteLine($"Database ImageUrl for dish {dishId}: {dish.ImageUrl ?? "NULL"}");
+
+                return Results.Ok(new DishDto(dish.Id, dish.Name, dish.Description, dish.Price, dish.Ingredients, dish.IsAvailable, dish.ImageUrl));
             });
 
             // Create dish
@@ -51,6 +53,9 @@ namespace MeniuMate_API
                 var meniu = await dbContext.Menius.FindAsync(meniuId);
                 if (meniu == null) return Results.NotFound("Meniu not found");
 
+                var userId = httpContext.User.FindFirstValue(JwtRegisteredClaimNames.Sub)
+                    ?? httpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+
                 var dish = new Dish
                 {
                     Name = createDishDto.Name,
@@ -58,16 +63,17 @@ namespace MeniuMate_API
                     Price = createDishDto.Price,
                     Ingredients = createDishDto.Ingredients,
                     IsAvailable = createDishDto.IsAvailable,
+                    ImageUrl = createDishDto.ImageUrl,
                     CreationDate = DateTime.UtcNow,
                     Meniu = meniu,
-                    UserId = httpContext.User.FindFirstValue(JwtRegisteredClaimNames.Sub)
+                    UserId = userId
                 };
 
                 dbContext.Dishes.Add(dish);
                 await dbContext.SaveChangesAsync();
 
                 return Results.Created($"/api/menius/{meniuId}/dishes/{dish.Id}",
-                    new DishDto(dish.Id, dish.Name, dish.Description, dish.Price, dish.Ingredients, dish.IsAvailable));
+                    new DishDto(dish.Id, dish.Name, dish.Description, dish.Price, dish.Ingredients, dish.IsAvailable, dish.ImageUrl));
             });
 
             // Update dish
@@ -83,11 +89,12 @@ namespace MeniuMate_API
                 dish.Price = updateDishDto.Price;
                 dish.Ingredients = updateDishDto.Ingredients;
                 dish.IsAvailable = updateDishDto.IsAvailable;
+                dish.ImageUrl = updateDishDto.ImageUrl;
 
                 dbContext.Update(dish);
                 await dbContext.SaveChangesAsync();
 
-                return Results.Ok(new DishDto(dish.Id, dish.Name, dish.Description, dish.Price, dish.Ingredients, dish.IsAvailable));
+                return Results.Ok(new DishDto(dish.Id, dish.Name, dish.Description, dish.Price, dish.Ingredients, dish.IsAvailable, dish.ImageUrl));
             });
 
             // Delete dish
@@ -114,6 +121,8 @@ namespace MeniuMate_API
             RuleFor(d => d.Description).NotEmpty().Length(5, 300);
             RuleFor(d => d.Price).GreaterThan(0);
             RuleFor(d => d.Ingredients).NotEmpty().Length(5, 300);
+            RuleFor(d => d.ImageUrl).Must(u => string.IsNullOrEmpty(u) || Uri.IsWellFormedUriString(u, UriKind.Absolute))
+                         .WithMessage("Invalid image URL");
         }
     }
 
@@ -124,6 +133,8 @@ namespace MeniuMate_API
             RuleFor(d => d.Description).NotEmpty().Length(10, 300);
             RuleFor(d => d.Price).GreaterThan(0);
             RuleFor(d => d.Ingredients).NotEmpty().Length(5, 300);
+            RuleFor(d => d.ImageUrl).Must(u => string.IsNullOrEmpty(u) || Uri.IsWellFormedUriString(u, UriKind.Absolute))
+                         .WithMessage("Invalid image URL");
         }
     }
 }

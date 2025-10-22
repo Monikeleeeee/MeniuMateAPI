@@ -35,12 +35,19 @@ namespace MeniuMate_API
             //Create meniu
             meniuGroup.MapPost("menius", [Authorize(Roles = ForumRoles.Admin)] async ([Validate] CreateMeniuDto createMeniuDto, HttpContext httpContext, ForumDbContext dbContext) =>
             {
+
+                var userId = httpContext.User.FindFirstValue(JwtRegisteredClaimNames.Sub)
+                    ?? httpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+                if (string.IsNullOrEmpty(userId))
+                    return Results.BadRequest("UserId missing in token.");
+
                 var meniu = new Meniu()
                 {
                     Name = createMeniuDto.Name,
                     Description = createMeniuDto.Description,
                     CreationDate = DateTime.UtcNow,
-                    UserId = httpContext.User.FindFirstValue(JwtRegisteredClaimNames.Sub)
+                    UserId = userId
                 };
 
                 dbContext.Menius.Add(meniu);

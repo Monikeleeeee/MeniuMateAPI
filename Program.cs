@@ -8,11 +8,12 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using System.Text;
 
-JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
-
 var builder = WebApplication.CreateBuilder(args);
+
+JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
 
 builder.Services.AddDbContext<ForumDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("PostgreSQL")));
@@ -22,36 +23,56 @@ builder.Services.AddTransient<JwtTokenService>();
 builder.Services.AddScoped<AuthDbSeeder>();
 
 builder.Services.AddIdentity<ForumRestUser, IdentityRole>()
-        .AddEntityFrameworkStores<ForumDbContext>()
-        .AddDefaultTokenProviders();
+    .AddEntityFrameworkStores<ForumDbContext>()
+    .AddDefaultTokenProviders();
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend", policy =>
+    {
+        policy.WithOrigins("http://localhost:5173")
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
 
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
     options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
     options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-}).AddJwtBearer(options =>
+})
+.AddJwtBearer(options =>
 {
-    options.TokenValidationParameters.ValidAudience = builder.Configuration["Jwt:ValidAudience"];
-    options.TokenValidationParameters.ValidIssuer = builder.Configuration["Jwt:ValidIssuer"];
-    options.TokenValidationParameters.IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Secret"]));
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = builder.Configuration["JWT:ValidIssuer"],
+        ValidAudience = builder.Configuration["JWT:ValidAudience"],
+        IssuerSigningKey = new SymmetricSecurityKey(
+            Encoding.UTF8.GetBytes(builder.Configuration["JWT:Secret"])),
+        NameClaimType = JwtRegisteredClaimNames.Sub,
+        RoleClaimType = ClaimTypes.Role
+    };
 });
 
 builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
-MeniuEndPoints.AddMeniuApi(app);
-DishEndPoints.AddDishApi(app);
-CommentEndPoints.AddCommentApi(app);
-
-app.AddAuthApi();
-
+app.UseCors("AllowFrontend");
 app.UseAuthentication();
 app.UseAuthorization();
 
-using var scope = app.Services.CreateScope();
+MeniuEndPoints.AddMeniuApi(app);
+DishEndPoints.AddDishApi(app);
+CommentEndPoints.AddCommentApi(app);
+app.AddAuthApi();
 
+using var scope = app.Services.CreateScope();
 var dbContext = scope.ServiceProvider.GetRequiredService<ForumDbContext>();
 dbContext.Database.Migrate();
 

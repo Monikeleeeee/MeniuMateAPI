@@ -12,6 +12,7 @@ namespace MeniuMate_API.Data.Entities
         public required double Price { get; set; }
         public required string Ingredients { get; set; }
         public bool IsAvailable { get; set; }
+        public string? ImageUrl { get; set; }
 
         public required Meniu Meniu { get; set; }
 
@@ -20,8 +21,8 @@ namespace MeniuMate_API.Data.Entities
         public ForumRestUser User { get; set; }
 
     }
-    public record DishDto(int Id, string Name, string Description, double Price, string Ingredients, bool IsAvailable);
-    public record CreateDishDto(string Name, string Description, double Price, string Ingredients, bool IsAvailable);
-    public record UpdateDishDto(string Description, double Price, string Ingredients, bool IsAvailable);
+    public record DishDto(int Id, string Name, string Description, double Price, string Ingredients, bool IsAvailable, string? ImageUrl);
+    public record CreateDishDto(string Name, string Description, double Price, string Ingredients, bool IsAvailable, string? ImageUrl);
+    public record UpdateDishDto(string Description, double Price, string Ingredients, bool IsAvailable, string? ImageUrl);
 
 }
